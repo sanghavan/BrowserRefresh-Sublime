@@ -65,6 +65,7 @@ Specify which browsers to refresh on command. The default is `chrome` which will
 | Google Chrome             | `chrome`     | Mac, Win, Linux |
 | Google Chrome Canary      | `canary`     | Mac, Win        |
 | Safari                    | `safari`     | Mac, Win        |
+| Safari Technology Preview | `safari_pre` | Mac        	 |
 | WebKit                    | `webkit`     | Mac             |
 | Firefox                   | `firefox`    | Mac, Win, Linux |
 | Firefox Developer Edition | `firefoxdev` | Mac             |

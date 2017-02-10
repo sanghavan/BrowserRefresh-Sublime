@@ -17,8 +17,23 @@ class MacBrowserRefresh:
             end tell
             """
 
+        self._safari_applescript = """
+            tell application "{name}"
+                {activate}
+                tell its first document
+                    set its URL to (get its URL)
+                end tell
+            end tell
+            """
+
     def _chrome(self, app_name, browser_name):
         command = self._chrome_applescript.format(
+            name=app_name, activate=self.activate)
+
+        self._call_applescript(command)
+
+    def _safari(self, app_name, browser_name):
+        command = self._safari_applescript.format(
             name=app_name, activate=self.activate)
 
         self._call_applescript(command)
@@ -33,16 +48,10 @@ class MacBrowserRefresh:
         self._chrome("Yandex", "yandex")
 
     def safari(self):
-        command = """
-            tell application "Safari"
-                {activate}
-                tell its first document
-                    set its URL to (get its URL)
-                end tell
-            end tell
-            """.format(activate=self.activate)
+        self._safari("Safari", "safari")
 
-        self._call_applescript(command)
+    def safari_pre(self):
+        self._safari("Safari Technology Preview", "safari_pre")
 
     def webkit(self):
         command = """

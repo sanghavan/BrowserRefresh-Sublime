@@ -59,6 +59,9 @@ class BrowserRefreshCommand(sublime_plugin.TextCommand):
         if 'safari' in browsers:
             refresher.safari()
 
+        if 'safari_pre' in browsers:
+            refresher.safari_pre()
+
         if 'webkit' in browsers and _os == 'Darwin':
             refresher.webkit()
 
